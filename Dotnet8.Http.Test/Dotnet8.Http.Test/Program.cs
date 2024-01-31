@@ -18,8 +18,7 @@ app.MapGet("/", async Task<Results<Ok<OkResult>, BadRequest<BadRequestResult>>> 
         {
             StatusCode = response.StatusCode,
             ReasonPhrase = response.ReasonPhrase,
-            IsSuccessStatusCode = response.IsSuccessStatusCode,
-            Response = await response.Content.ReadAsStringAsync(),
+            IsSuccessStatusCode = response.IsSuccessStatusCode
         });
     }
     catch (Exception e)
