@@ -26,13 +26,13 @@ app.MapGet("/", async Task<Results<Ok<OkResult>, BadRequest<BadRequestResult>>> 
         return TypedResults.BadRequest(new BadRequestResult
         {
             Message = e.Message,
-            InnerExceptionMessage = e.InnerException.Message,
-            InnerInnerExceptionMessage = e.InnerException.InnerException.Message,
-            InnerInnerInnerExceptionMessage = e.InnerException.InnerException.InnerException.Message,
+            InnerExceptionMessage = e.InnerException?.Message,
+            InnerInnerExceptionMessage = e.InnerException?.InnerException?.Message,
+            InnerInnerInnerExceptionMessage = e.InnerException?.InnerException?.InnerException?.Message,
             StackTrace = e.StackTrace,
-            InnerStackTrace = e.InnerException.StackTrace,
-            InnerInnerStackTrace = e.InnerException.InnerException.StackTrace,
-            InnerInnerInnerStackTrace = e.InnerException.InnerException.InnerException.StackTrace
+            InnerStackTrace = e.InnerException?.StackTrace,
+            InnerInnerStackTrace = e.InnerException?.InnerException?.StackTrace,
+            InnerInnerInnerStackTrace = e.InnerException?.InnerException?.InnerException?.StackTrace
         });
     }
 });
