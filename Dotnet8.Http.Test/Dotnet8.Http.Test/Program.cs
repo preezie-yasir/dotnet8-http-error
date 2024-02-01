@@ -12,7 +12,7 @@ app.MapGet("/", async Task<Results<Ok<OkResult>, BadRequest<BadRequestResult>>> 
     try
     {
         var response = await httpClient.GetAsync(
-            "https://webadapters.channeladvisor.com/CSEAdapter/Default.aspx?pid=WZP%5e%5eF%5eSAnHKt5*-U%5beC2TQjvwI_%26%2b%22%60%5bJ_Q)nHHHc%26%5c%24KaL3QV%3duI%3d6(*%23%5bbIdQQnGy%40_WaUecw%5dRTlHJ");
+            "https://webadapters.channeladvisor.com/CSEAdapter/Default.aspx?pid=WZP%5e%5eF%5eSAnHKt5*-U%5beC2TQjvwI_%26%2b%22%60%5bJ_Q)nHHHc%26%5c%24KaL3QV%3duI%3d6(*%23%5bbIdQQnGy%40_WaUecw%5dRTlHJ", HttpCompletionOption.ResponseHeadersRead);
 
         return TypedResults.Ok(new OkResult
         {
